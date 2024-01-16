@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mining_types
   get 'welcome/index'
   # mesma coisa de "get 'welcome/index', to: 'welcome#index'" mas pela rota ter a mesma formação de 'controler#action' podemos ocultar o 'to'
   resources :coins

@@ -1,2 +1,8 @@
 <h1>Olá mundo</h1>
-<%= link_to "Cadastro de moeda",  new_coin_path%>
+<p><%= data_br(Date.today)%></p>
+
+<%= render "menu"%>
+<p>
+    Voce esta em ambiente de <strong><%= ambiente_rails%></strong>
+</p>
+<p>Variavel de instancia: <%= @nome %></p>

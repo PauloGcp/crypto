@@ -12,7 +12,7 @@
 
 <p>
   <strong>Url:</strong>
-  <%= @coin.url %>
+   <%= image_tag @coin.url,  width: 25, height: 25 if @coin.url %>
 </p>
 
 <%= link_to 'Edit', edit_coin_path(@coin) %> |

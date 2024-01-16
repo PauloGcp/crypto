@@ -1,4 +1,6 @@
 class CoinsController < ApplicationController
+  layout "adm"
+
   before_action :set_coin, only: %i[ show edit update destroy ]
 
   # GET /coins or /coins.json
@@ -67,4 +69,4 @@ class CoinsController < ApplicationController
     def coin_params
       params.require(:coin).permit(:description, :acronym, :url)
     end
-end
+  end
