@@ -11,8 +11,8 @@ namespace :dev do
       show_spinner("Migrando DB") {
         %x(rails db:migrate)
       }
-      %x(rails dev:add_coins)
       %x(rails dev:add_mining_type)
+      %x(rails dev:add_coins)
     end
   end
 
@@ -20,11 +20,11 @@ namespace :dev do
   task add_coins: :environment do   
     show_spinner("Cadastrando moedas") do 
       coins = [{
-        description: 'Teste1', acronym: 'Tst1', url: ''
+        description: 'Teste1', acronym: 'Tst1', url: '', mining_type: MiningType.all.sample
       }, {
-        description: 'Teste2', acronym: 'Tst2', url: ''
+        description: 'Teste2', acronym: 'Tst2', url: '', mining_type: MiningType.where(acronym: 'PoW').first # o .first foi adicionado pois o "where" nao retorna um objeto, mas sim uma relação de objetos que correspondem ao parametro passado
       }, {
-        description: 'Teste3', acronym: 'Tst3', url: ''
+        description: 'Teste3', acronym: 'Tst3', url: '', mining_type: MiningType.find_by(acronym: 'PoC')
       }]
       coins.each do |coin|
         Coin.find_or_create_by!(coin)
