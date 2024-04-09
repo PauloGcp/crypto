@@ -29,9 +29,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
+pt-BR:
+  hello: "Olá mundo"
   links:
-    edit: "Edit"
-    show: "Show"
-    delete: "Delete"
+    edit: "Editar"
+    show: "Mostrar"
+    delete: "Apagar"
+  
