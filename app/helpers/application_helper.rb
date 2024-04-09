@@ -11,4 +11,8 @@ module ApplicationHelper
         else return "Teste"
         end
     end
+
+    def locale(loc)
+        loc === :en ?  "Inglês" :  "Português - BR"
+    end
 end
